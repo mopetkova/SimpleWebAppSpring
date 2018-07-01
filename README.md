@@ -1,1 +1,1 @@
-# Tutotial Simple WebApp Spring 
+# Tutorial Simple WebApp Spring 
