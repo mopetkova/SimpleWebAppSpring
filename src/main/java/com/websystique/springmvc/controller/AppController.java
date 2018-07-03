@@ -205,29 +205,34 @@ public class AppController {
     public boolean checkValidEmployee(@ModelAttribute("employee") Employee employee) {
         String u = new Utils("AppController", "createEmployee").toString();
 
-        boolean valid = false;
+        boolean valid = true;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         notifications.clear();
 
 
-        if (!isValid(employee.getName())) {
+        if (!isValid(employee.getName())) { //if (s == null || s.equals("")) { return false;
+            System.out.println("Name " + isValid(employee.getName()));
             notifications.add(new Notification("alert-danger", "Name required."));
+            valid = false;
         }
         if (!isValid(employee.getSurname())) {
+            System.out.println("Surname " + isValid(employee.getSurname()));
             notifications.add(new Notification("alert-danger", "Surname required."));
+            valid = false;
         }
 //        if (!isValid(df.format(employee.getBirthDate()))) {
 //            notifications.add(new Notification("alert-danger", "Birth date required."));
 //        }
         if (!isValid(employee.getUsername())) {
+            System.out.println("Username " + isValid(employee.getUsername()));
             notifications.add(new Notification("alert-danger", "Username required."));
+            valid = false;
         }
         if (!isValid(employee.getPassword())) {
+            System.out.println("Password " + isValid(employee.getPassword()));
             notifications.add(new Notification("alert-danger", "Password required."));
-        } else {
-            valid = true;
+            valid = false;
         }
-
         return valid;
     }
 
