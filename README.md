@@ -1,4 +1,4 @@
-# Tutorial Simple WebApp Spring 
+# Tutorial Simple WebApp Spring MVC
 
 - Spring MVC
 - Mavel
